@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Force1_0App: App {
+   
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                TabBarView()
+            }
         }
     }
 }
