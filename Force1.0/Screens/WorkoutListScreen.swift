@@ -21,20 +21,22 @@ struct WorkoutListScreen: View {
     let types = ["Strength", "Power", "Cardio", "HIIT", "Recover"]
     
     var body: some View {
-        List {
-            if let workouts = workouts {
-                ForEach(workouts) { workout in
-                    NavigationLink(destination: DetailScreen()) {
-                        CardView(workout: workout)
+        NavigationView {
+            List {
+                if let workouts = workouts {
+                    ForEach(workouts) { workout in
+                        NavigationLink(destination: DetailScreen()) {
+                            CardView(workout: workout)
+                        }
+                        .listRowBackground(workout.color)
                     }
-                    .listRowBackground(workout.color)
                 }
             }
-        }
-        .navigationTitle("Daily Workouts")
-        .navigationBarItems(
-            trailing:
+            .navigationTitle("Daily Workouts")
+            .navigationBarItems(
+                trailing:
                 AddWorkoutButton())
+        }
       
             
         }

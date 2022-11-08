@@ -13,9 +13,8 @@ struct Force1_0App: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                TabBarView()
+           TabBarView()
             }
         }
     }
-}
+

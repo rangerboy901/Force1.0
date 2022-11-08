@@ -30,7 +30,7 @@ enum TabBarItem: Hashable {
         switch self {
         case .Settings: return Color.blue
         case .Workouts: return Color.orange
-        case.Summary: return Color.green
+        case.Summary: return Color.blue
         
             }
         }

@@ -8,10 +8,119 @@
 import SwiftUI
 
 struct SettingsScreen: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false, content: {
+                
+                // MARK: SECTION 1: FORCE 02
+                GroupBox(label: SettingsLabelView(labelText: "Force O2", labelImage: "dot.radiowaves.left.and.right"), content: {
+                    HStack(alignment: .center, spacing: 10, content: {
+                        
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80, alignment: .center)
+                            .cornerRadius(12)
+                        
+                        Text("DogGram is the #1 app for posting pictures of your dog and sharing them across the world. We are a dog-loving community and we're happy to have you!")
+                            .font(.footnote)
+                        
+                    })
+                })
+                .padding()
+                
+                // MARK: SECTION 2: PROFILE
+                GroupBox(label: SettingsLabelView(labelText: "Profile", labelImage: "person.fill"), content: {
+                    
+                    NavigationLink(
+                        destination: SettingsEditTextView(),
+                        label: {
+                            SettingsRowView(leftIcon: "pencil", text: "Display Name", color: Color.purple)
+                        })
+                    
+                    NavigationLink(
+                        destination: SettingsEditTextView(),
+                        label: {
+                            SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.purple)
+                        })
+                    
+                    NavigationLink(
+                        destination: SettingsEditImageView(),
+                        label: {
+                            SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.purple)
+                        })
+                    
+                    SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.purple)
+                    
+                    
+                })
+                .padding()
+                
+                // MARK: SECTION 3: APPLICATION
+                GroupBox(label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone"), content: {
+                    
+                    Button(action: {
+                        openCustomURL(urlString: "https://www.google.com")
+                    }, label: {
+                        SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.yellow)
+                    })
+                    
+                    Button(action: {
+                        openCustomURL(urlString: "https://www.yahoo.com")
+                    }, label: {
+                        SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: Color.orange)
+                    })
+                    
+                    Button(action: {
+                        openCustomURL(urlString: "https://www.bing.com")
+                    }, label: {
+                        SettingsRowView(leftIcon: "globe", text: "DogGram's Website", color: Color.orange)
+                    })
+                    
+                })
+                .padding()
+                
+                // MARK: SECTION 4: SIGN OFF
+                GroupBox {
+                    Text("DogGram was made with love. \n All Rights Reserved \n Cool Apps Inc. \n Copyright 2020 ♥️")
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
+                    
+                }
+                .padding()
+                .padding(.bottom, 80)
+                
+            })
+            .navigationBarTitle("Settings")
+            .navigationBarTitleDisplayMode(.large)
+        }
+
+    }
+    
+    // MARK: FUNCTIONS
+    
+    func openCustomURL(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+}
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsScreen()
+            .preferredColorScheme(.dark)
     }
 }
+
 
 struct SettingsScreen_Previews: PreviewProvider {
     static var previews: some View {
