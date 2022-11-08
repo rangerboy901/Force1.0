@@ -16,14 +16,14 @@ struct TabBarView: View {
     //MARK: CUSTOM TAB BAR
         CustomTabBarContainerView(selection: $tabSelection) {
             
-            Color.blue
+            
             SettingsScreen()
                 .tabBarItem(tab: .Settings, selection: $tabSelection)
             
-            Color.orange
+          
             WorkoutListScreen()
                 .tabBarItem(tab: .Workouts, selection: $tabSelection)
-            Color.green
+           
             SummaryScreen()
                 .tabBarItem(tab: .Summary, selection: $tabSelection)
             

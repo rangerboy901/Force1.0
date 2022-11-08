@@ -12,7 +12,7 @@ class DailyWorkout: Object, ObjectKeyIdentifiable {
   
     @Persisted  var title = ""
     @Persisted var objective = ""
-    @Persisted var workoutType = ""
+    @Persisted var workoutType = "Strength"
     @Persisted var lengthInMinutes = 0
     @Persisted var exerciseList = RealmSwift.List<String>()
     @Persisted var colorComponents: Components?

@@ -19,7 +19,7 @@ struct HistoryView: View {
                 Text(history.exerciseString)
             }
         }
-        .navigationTitle(Text(history.date, style: .date))
+        .navigationTitle(Text(history.date ?? Date(), style: .date))
         .padding()
     }
 }

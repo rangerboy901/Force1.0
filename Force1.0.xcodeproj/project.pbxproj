@@ -28,10 +28,11 @@
 		4AB2DF72291A012F003C9A76 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF71291A012F003C9A76 /* HistoryView.swift */; };
 		4AB2DF74291A1624003C9A76 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF73291A1624003C9A76 /* DetailScreen.swift */; };
 		4AB2DF76291A163A003C9A76 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF75291A163A003C9A76 /* CardView.swift */; };
-		4AB2DF78291A19DB003C9A76 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF77291A19DB003C9A76 /* WorkoutData.swift */; };
 		4AB2DF7A291A1BDF003C9A76 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF79291A1BDF003C9A76 /* Color+Codable.swift */; };
 		4AB2DF7D291A2345003C9A76 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB2DF7C291A2345003C9A76 /* Realm */; };
 		4AB2DF7F291A2345003C9A76 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB2DF7E291A2345003C9A76 /* RealmSwift */; };
+		4AB2DF81291AEEFB003C9A76 /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF80291AEEFB003C9A76 /* EditScreen.swift */; };
+		4AB2DF83291AFB7E003C9A76 /* AddWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF82291AFB7E003C9A76 /* AddWorkoutButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +77,9 @@
 		4AB2DF71291A012F003C9A76 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		4AB2DF73291A1624003C9A76 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		4AB2DF75291A163A003C9A76 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		4AB2DF77291A19DB003C9A76 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
 		4AB2DF79291A1BDF003C9A76 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
+		4AB2DF80291AEEFB003C9A76 /* EditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
+		4AB2DF82291AFB7E003C9A76 /* AddWorkoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,10 +172,11 @@
 		4AB2DF542919F458003C9A76 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4AB2DF75291A163A003C9A76 /* CardView.swift */,
 				4AB2DF71291A012F003C9A76 /* HistoryView.swift */,
+				4AB2DF82291AFB7E003C9A76 /* AddWorkoutButton.swift */,
 				4AB2DF2C2919F3C6003C9A76 /* ContentView.swift */,
 				4AB2DF612919F6DE003C9A76 /* CustomTabBar */,
-				4AB2DF75291A163A003C9A76 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,7 +184,6 @@
 		4AB2DF552919F470003C9A76 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4AB2DF77291A19DB003C9A76 /* WorkoutData.swift */,
 				4AB2DF6F291A0106003C9A76 /* History.swift */,
 				4AB2DF6D291A0061003C9A76 /* DailyWorkout.swift */,
 				4AB2DF622919F712003C9A76 /* CustomTabBarModels */,
@@ -205,6 +207,7 @@
 				4AB2DF692919F7F9003C9A76 /* WorkoutListScreen.swift */,
 				4AB2DF6B2919F810003C9A76 /* SummaryScreen.swift */,
 				4AB2DF73291A1624003C9A76 /* DetailScreen.swift */,
+				4AB2DF80291AEEFB003C9A76 /* EditScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -372,12 +375,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AB2DF78291A19DB003C9A76 /* WorkoutData.swift in Sources */,
 				4AB2DF2D2919F3C6003C9A76 /* ContentView.swift in Sources */,
 				4AB2DF682919F7DA003C9A76 /* SettingsScreen.swift in Sources */,
+				4AB2DF83291AFB7E003C9A76 /* AddWorkoutButton.swift in Sources */,
 				4AB2DF662919F77C003C9A76 /* CustomTabBarPreferenceKey.swift in Sources */,
 				4AB2DF5E2919F657003C9A76 /* CustomTabBar.swift in Sources */,
 				4AB2DF6C2919F810003C9A76 /* SummaryScreen.swift in Sources */,
+				4AB2DF81291AEEFB003C9A76 /* EditScreen.swift in Sources */,
 				4AB2DF74291A1624003C9A76 /* DetailScreen.swift in Sources */,
 				4AB2DF602919F6BF003C9A76 /* CustomTabBarContainer.swift in Sources */,
 				4AB2DF5A2919F5DE003C9A76 /* HapticManager.swift in Sources */,
