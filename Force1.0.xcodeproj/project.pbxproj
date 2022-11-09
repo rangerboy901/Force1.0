@@ -37,6 +37,7 @@
 		4AB2DF87291B1475003C9A76 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF86291B1475003C9A76 /* SettingsRowView.swift */; };
 		4AB2DF89291B1598003C9A76 /* SettingsEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF88291B1598003C9A76 /* SettingsEditTextView.swift */; };
 		4AB2DF8B291B16C7003C9A76 /* SettingsEditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF8A291B16C7003C9A76 /* SettingsEditImageView.swift */; };
+		4AB2DF8D291B3D7D003C9A76 /* GymView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB2DF8C291B3D7D003C9A76 /* GymView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		4AB2DF86291B1475003C9A76 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		4AB2DF88291B1598003C9A76 /* SettingsEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditTextView.swift; sourceTree = "<group>"; };
 		4AB2DF8A291B16C7003C9A76 /* SettingsEditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageView.swift; sourceTree = "<group>"; };
+		4AB2DF8C291B3D7D003C9A76 /* GymView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				4AB2DF71291A012F003C9A76 /* HistoryView.swift */,
 				4AB2DF84291B140F003C9A76 /* SettingsLabelView.swift */,
 				4AB2DF88291B1598003C9A76 /* SettingsEditTextView.swift */,
+				4AB2DF8C291B3D7D003C9A76 /* GymView.swift */,
 				4AB2DF82291AFB7E003C9A76 /* AddWorkoutButton.swift */,
 				4AB2DF2C2919F3C6003C9A76 /* ContentView.swift */,
 				4AB2DF612919F6DE003C9A76 /* CustomTabBar */,
@@ -403,6 +406,7 @@
 				4AB2DF8B291B16C7003C9A76 /* SettingsEditImageView.swift in Sources */,
 				4AB2DF6E291A0061003C9A76 /* DailyWorkout.swift in Sources */,
 				4AB2DF642919F73C003C9A76 /* TabBarItem.swift in Sources */,
+				4AB2DF8D291B3D7D003C9A76 /* GymView.swift in Sources */,
 				4AB2DF6A2919F7F9003C9A76 /* WorkoutListScreen.swift in Sources */,
 				4AB2DF70291A0106003C9A76 /* History.swift in Sources */,
 				4AB2DF5C2919F61A003C9A76 /* TabBarView.swift in Sources */,

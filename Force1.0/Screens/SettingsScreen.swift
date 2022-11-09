@@ -26,7 +26,7 @@ struct SettingsScreen: View {
                             .frame(width: 80, height: 80, alignment: .center)
                             .cornerRadius(12)
                         
-                        Text("DogGram is the #1 app for posting pictures of your dog and sharing them across the world. We are a dog-loving community and we're happy to have you!")
+                        Text("Force O2 is the #1 app for tracking workouts without all the form entries and time staking application requirements.   Simple approach and clean experience!")
                             .font(.footnote)
                         
                     })
@@ -78,7 +78,7 @@ struct SettingsScreen: View {
                     Button(action: {
                         openCustomURL(urlString: "https://www.bing.com")
                     }, label: {
-                        SettingsRowView(leftIcon: "globe", text: "DogGram's Website", color: Color.orange)
+                        SettingsRowView(leftIcon: "globe", text: "MountainLabDevelopments", color: Color.orange)
                     })
                     
                 })
@@ -86,7 +86,7 @@ struct SettingsScreen: View {
                 
                 // MARK: SECTION 4: SIGN OFF
                 GroupBox {
-                    Text("DogGram was made with love. \n All Rights Reserved \n Cool Apps Inc. \n Copyright 2020 ♥️")
+                    Text("Force O2  was made with intent to grow it with community feedback. \n All Rights Reserved \n MountainLabDevelopments. \n Copyright 2020")
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)

@@ -14,7 +14,7 @@ struct CardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(workout.title)
-                .foregroundColor(.accentColor)
+                .foregroundColor(workout.color.accessibleFontColor)
                 .accessibilityAddTraits(.isHeader)
                 .font(.title2)
                 .fontWeight(.bold)
@@ -23,28 +23,30 @@ struct CardView: View {
             Text(workout.objective)
                 .font(.callout)
                 .fontWeight(.semibold)
-                .foregroundColor(.accentColor)
+                .foregroundColor(.primary)
             Spacer()
             
             HStack {
                 Label("Goal:  \(workout.lengthInMinutes) min(s)", systemImage: "stopwatch.fill")
+                    .foregroundColor(workout.color.accessibleFontColor)
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(Text("Exercises"))
                     .accessibilityValue(Text("\(workout.exercises.count) "))
                 Spacer()
                 Text("\(workout.workoutType)")
-                    .padding(4)
-                    .foregroundColor(.accentColor)
-                    .accessibilityLabel("Workout type\(workout.workoutType) ")
+                    .padding(5)
                     .font(.body)
+                    .foregroundColor(workout.color.accessibleFontColor)
+                    .accessibilityLabel("Workout type\(workout.workoutType) ")
                     .overlay(
-                        Capsule().stroke(workout.color.accessibleFontColor, lineWidth: 2))
-            }.foregroundColor(.accentColor)
+                        Capsule().stroke(workout.color.accessibleFontColor, lineWidth: 3))
+            }
+            .foregroundColor(.primary)
             
         }
         .padding(2)
         .cornerRadius(10)
-        .foregroundColor(workout.color.accessibleFontColor)
+        .foregroundColor(.primary)
 
     }
        
@@ -55,7 +57,7 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(workout: workout)
             .background(workout.color)
-    
+            .previewLayout(.sizeThatFits)
             .previewLayout(.fixed(width: 350, height: 100))
     }
 }

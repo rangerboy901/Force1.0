@@ -2,7 +2,7 @@
 //  EditScreen.swift
 //  Force1.0
 //
-//  Created by Joseph Wil;liam DeWeese on 11/8/22.
+//  Created by Joseph William DeWeese on 11/8/22.
 //
 
 import SwiftUI
@@ -28,7 +28,7 @@ struct EditScreen: View {
                     .cornerRadius(10)
                     .foregroundColor(.primary)
             }
-                Section(header: Text("Add/Edit Workout Objective⇩").fontWeight(.bold).foregroundColor(.accentColor)) {
+                Section(header: Text("Add/Edit Workout Objective").fontWeight(.bold).foregroundColor(.accentColor)) {
                     TextEditor(text: $workoutData.objective)
                         .frame(width: 350, height: 125, alignment: .leading)
                         .multilineTextAlignment(.leading)
@@ -50,8 +50,9 @@ struct EditScreen: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .foregroundColor(.primary)
             }
+            .foregroundColor(workoutData.color)
             ///workout goal slider
-            Section("Time Goal") {
+            Section(header: Text("Time Goal")) {
                 HStack {
                     Slider(value: $workoutData.lengthInMinutes, in:1...180, step: 1){
                         Text("\(Int(workoutData.lengthInMinutes)) min(s)")
@@ -63,6 +64,11 @@ struct EditScreen: View {
                         .accessibilityHidden(true)
                 }
             }
+            Section(header: Text("Theme").fontWeight(.bold).foregroundColor(workoutData.color)) {
+                ColorPicker("Choose your theme color", selection: $workoutData.color)
+                    .accessibilityLabel(Text("Color picker"))
+            }
+            
             ///EXERCISES
             Section(header: Text("Add/Delete Exercises")) {
                 ForEach(workoutData.exercises, id: \.self) { exercise in
@@ -85,13 +91,13 @@ struct EditScreen: View {
                             .accessibilityLabel("Add exercise")
                     }
                     .disabled(newExercise.isEmpty)
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.primary)
                     
                 }
             }//#endOf Section
         }
         .listStyle(InsetListStyle())
-        .foregroundColor(.accentColor)
+        .foregroundColor(workoutData.color)
     }
 }
 

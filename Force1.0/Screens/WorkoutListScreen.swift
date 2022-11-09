@@ -17,7 +17,6 @@ struct WorkoutListScreen: View {
     @State private var currentWorkout = DailyWorkout()
     @State private var workoutType: String = "Strength"
     
-    
     let types = ["Strength", "Power", "Cardio", "HIIT", "Recover"]
     
     var body: some View {
@@ -25,7 +24,7 @@ struct WorkoutListScreen: View {
             List {
                 if let workouts = workouts {
                     ForEach(workouts) { workout in
-                        NavigationLink(destination: DetailScreen()) {
+                        NavigationLink(destination: DetailScreen(workout: workout)) {
                             CardView(workout: workout)
                         }
                         .listRowBackground(workout.color)
@@ -35,13 +34,53 @@ struct WorkoutListScreen: View {
             .navigationTitle("Daily Workouts")
             .navigationBarItems(
                 trailing:
-                AddWorkoutButton())
-        }
-      
-            
-        }
-    }
-
+                    ZStack {
+                        Group {
+                            Circle()
+                                .fill(Color("orange"))
+                                .frame(width: 38, height: 38, alignment: .center)
+                            Circle()
+                                .fill(Color("blue"))
+                                .frame(width: 32, height: 32, alignment: .center)
+                            Circle()
+                                .fill(Color("white"))
+                                .frame(width: 22, height: 22, alignment: .center)
+                            
+                            Button(action: {
+                                HapticManager.notification(type: .success)
+                                isPresented = true
+                            }) {
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundColor(Color("orange"))
+                                    .frame(width: 28, height: 28, alignment: .center)
+                                    .padding(.trailing, 8)
+                            }
+                            .padding()
+                            .sheet(isPresented: $isPresented) {
+                                NavigationView {
+                                    EditScreen(workoutData: $newWorkoutData)
+                                        .navigationBarItems(leading: Button("Dismiss") {
+                                            isPresented = false
+                                        }, trailing: Button("Add") {
+                                            let newWorkout = DailyWorkout(
+                                                title: newWorkoutData.title,
+                                                objective: newWorkoutData.objective,
+                                                workoutType: newWorkoutData.workoutType,
+                                                exercises: newWorkoutData.exercises,
+                                                lengthInMinutes: Int(newWorkoutData.lengthInMinutes),
+                                                color: newWorkoutData.color)
+                                            $workouts.append(newWorkout)
+                                            isPresented = false
+                                        })
+                                }
+                            }
+                        }
+                    })
+                }
+            }
+                }
 struct WorkoutListScreen_Previews: PreviewProvider {
     static var previews: some View {
         WorkoutListScreen()
